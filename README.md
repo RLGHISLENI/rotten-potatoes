@@ -266,3 +266,26 @@ kubectl scale replicaset meureplicaset --replicas 10
 # Altera a imagem definida no deployment através da linha de comando
 kubectl set image deployment meudeployment web=kubedevio/web-page:green
 ```
+
+## **Explicações Importantes sogre o uso de Docker e Kubernets**
+
+### **Para que serve o Kubernetes e porque ele não substitui o Docker**
+
+Docker é uma **plataforma de conteinerização**, capaz de construir, distribuir e rodar contêineres, já o Kubernetes é **uma ferramenta auxiliar de orquestração de containers** que em conjunto com o Docker nos provê uma série de benefícios como escalabilidade, resiliência e balanceamento de carga evitando sobrecargas além de possuir uma estratégia de atualização que mantem sua aplicação no ar enquanto o processo está rolando.
+
+### **Como funciona a arquitetura do Kubernetes e quais os elementos usados pra fazer o deploy de forma correta no Kubernetes**
+
+O kubernetes é formado por um **cluster** (conjunto de recursos ou máquinas) onde cada uma delas vai realizar o papel de **_"Control Plane"_** ou **_"Node"_**.
+
+O **Node é quem executa os containers** das aplicações, ele quem executa toda a carga enquanto o Control Plane gerencia os Nodes e orquestra todo o Cluster.
+
+Para garantir alta disponibilidade no cluster **é recomendado que tenhamos mais de um Control Plane no cluster** pois caso um deles tenha algum problema o outro poderá assumir seu papel.
+
+Para realizar o deploy de nossa aplicação precisamos de uma **imagem Docker** contendo a nossa aplicação completa e rodando sem bugs e disponível em algum servidor registry como DockerHub por exemplo.
+
+O próximo passa é criarmos nosso **arquivo de manifesto** e definirmos a criação dos** pods** que irão **executar o container**, feito isso podemos configurar e implementar nossa **replicaset** que será responsável por **manter todos os pods sempre ativos e em execução**.
+
+Cada vez que um pod apresenta algum problema a **replicaset** sobe outra instância do pod para **manter a quantidades de réplicas em execução**.
+
+Para garantir que nosso ambiente não sofra com atualizações em produção, criamos e configuramos nosso **deployment** que irá garantir que uma replicaset seja **executada em paralelo** mantendo a replica atual rodando até a conclusão da atualização, permitindo assim a **alta disponibilidade** do serviço.
+
