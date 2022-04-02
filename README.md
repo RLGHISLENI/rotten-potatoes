@@ -51,28 +51,37 @@ Após a instalação do asdf, abra o terminal e execute a lista de comandos abai
 
 **k3d:**
 ```zsh
-asdf plugin-add k3d && asdf install k3d latest && asdf global k3d latest
+asdf plugin-add k3d && asdf install k3d latest 
 ```
 
 **kubectl:**
 ```zsh
-asdf plugin-add kubectl && asdf install kubectl latest && asdf global kubectl latest
+asdf plugin-add kubectl && asdf install kubectl latest
 ```
 
-Estes comandos combinados irão realizar a **adição do plugin** k3d/kubectl ao controlador asdf, **intalação** no sistema operacional e definição do escopo de utilizaçõa da **última versão como Global**
-
-Para validar a ação do asdf, utilize o comando descrito abaixo
+Agora para saber se **k3d** e o **kubectl** foram instalados corretamente pelo `asdf`, execute os comandos abaixo para identificar a versão instalada e defini-la como `global` para poder ser utilizada a partir de qualquer projeto.
 
 ```zsh
+# Lista todas ferramentas instaladas pelo asdf
 asdf list
 ```
 
-ou
+Identifique a versão de cada ferramenta instalada e defina ela como global em seu sistema operacional conforme demosntrado abaixo:
 
 ```zsh
+# Define cada versão a ser utilizada como global 
+asdf global k3d 5.4.1
+asdf global kubectl 1.23.5
+```
+
+Veja o resultado executando o comando que demosntra as versões instaladas e definidas pelo asdf em seu sistema operacional.
+
+```zsh
+# Lista qual a versão definida para cada ferramenta
 asdf current
-``` 
-Deverá retornar a lista de ferramentas instaladas e suas versões.
+```
+
+Estes comandos combinados irão realizar a **adição do plugin** k3d/kubectl ao controlador asdf, **intalação** no sistema operacional e definição do escopo de utilização da **versão instalada como Global**
 
 ## Iniciar o Docker na estação
 
