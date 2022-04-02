@@ -280,7 +280,7 @@ kubectl scale replicaset meureplicaset --replicas 10
 kubectl set image deployment meudeployment web=kubedevio/web-page:green
 ```
 
-## **Explicações Importantes sogre o uso de Docker e Kubernets**
+## **Explicações Importantes sobre o uso de Docker e Kubernets**
 
 ### **Para que serve o Kubernetes e porque ele não substitui o Docker**
 
@@ -302,3 +302,21 @@ Cada vez que um pod apresenta algum problema a **replicaset** sobe outra instân
 
 Para garantir que nosso ambiente não sofra com atualizações em produção, criamos e configuramos nosso **deployment** que irá garantir que uma replicaset seja **executada em paralelo** mantendo a replica atual rodando até a conclusão da atualização, permitindo assim a **alta disponibilidade** do serviço.
 
+
+## **Explicações Importantes sobre o uso de CI e CD**
+
+### **Como o uso de pipelines CI e CD pode ajudar a ganhar mais velocidade e eficiência**
+
+O **CI/CD** faz parte do processo de **pipeline** utilizado pelas equipes de desenvolvimento para **automatizar** a construção e **execução dos testes** de forma rápida e eficiente, permitindo agilizar a entrega de qualquer artefato em diversos ambientes de forma **paralela ou sequencial**.
+
+Este processo aumenta a **confiabilidade, segurança e consistência** das entregas da equipe, evitando que algo deixe de ser realizado ou esquecido por acidente.
+
+Atualmente estas práticas são fundamentais para construção de qualquer tipo de aplicação e garantem uma **maior organização** entre as **etapas de desenvolvimento**.
+
+### **O que é o GitHub Actions e quais seus elementos básicos**
+
+GitHub Actions é uma **plataforma de integração contínua** e **entrega contínua** (CI/CD) que **permite automatizar** a sua compilação, testar e pipeline de implantação. 
+
+É possível **criar fluxos de trabalho** completamente personalizado que criam e testam cada pull request no seu repositório, ou implantar pull requests mesclados em produção.
+
+Os principais elementos utilizados no GitHub Actions são: Workflow, Events, Jobs, Steps, Actions e Runners. 
