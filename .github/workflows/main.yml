@@ -27,6 +27,7 @@ jobs:
           tags: |
             rlghisleni/rotten-potatoes:latest
             rlghisleni/rotten-potatoes:v${{ github.run_number }}
+
   CD:
     needs: [CI]
     runs-on: ubuntu-latest
