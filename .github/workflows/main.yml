@@ -26,6 +26,6 @@ jobs:
           push: true
           tags: |
             rlghisleni/rotten-potataoes:latest
-            rlghisleni/rotten-potataoes:${{github.run_number}}
+            rlghisleni/rotten-potataoes:v${{github.run_number}}
             
           
