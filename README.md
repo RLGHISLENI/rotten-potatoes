@@ -192,6 +192,10 @@ Envie também a imagem **latest** atualizada
 docker push rlghisleni/rotten-potatoes:latest
 ```
 
+## Imagem do projeto no Docker Hub
+
+- [Repositório no Docker Hub contendo a imagem do Projeto](https://hub.docker.com/r/rlghisleni/rotten-potatoes)
+
 ## Como criar o cluster kubernetes
 
 Abra o terminal e utilize o k3d para criar o cluster kubernetes como descrito abaixo
