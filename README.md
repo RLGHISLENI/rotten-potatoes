@@ -12,92 +12,9 @@
 - [kubectx](https://github.com/ahmetb/kubectx)
 - k3d
 
-## Instalação de pré requisitos
+## Instalação de pré requisitos e inicialização do Docker
 
-Para este desafio utilizaremos o **k3d** para criação de nosso cluster kubernetes e o **kubectl** para criação de pods, replicasets, services e deployments.
-
-Primiero vamos instalar o **asdf** para podermos controlar todas as versões de pacotes instalados em nossa distribuição linux, permitindo a coexistência de mais de uma versão da mesma ferramenta em nosso sistema operacional.
-
-### **Instalando o asdf**
-
-Abra o terminal na pasta raiz do seu usuário e clone o repositório do asdf
-
-```zsh
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
-```
-
-Abra e edite o arquivo `.bashrc` como permissão de administrador utilizando o editor `nano`
-
-```zsh
-sudo nano ~/.bashrc
-```
-
-Adicione a instrução abaixo na última linha do arquivo, salve e feche
-
-```zsh
-. $HOME/.asdf/asdf.sh
-```
-
-Execute o comando abaixo para validar a instalação do asdf
-
-```zsh
-asdf info
-```
-
-Caso não funcione, reinicie seu terminal e tente novamente.
-
-### **Instalando o k3d e kubectl/kubectx**
-
-Após a instalação do asdf, abra o terminal e execute a lista de comandos abaixo:
-
-**k3d:**
-```zsh
-asdf plugin-add k3d && asdf install k3d latest 
-```
-
-**kubectl/kubectx:**
-```zsh
-asdf plugin-add kubectl && asdf install kubectl latest && asdf plugin-add kubectx && asdf install kubectx latest
-```
-
-Agora para saber se **k3d** e o **kubectl** foram instalados corretamente pelo `asdf`, execute os comandos abaixo para identificar a versão instalada e defini-la como `global` para poder ser utilizada a partir de qualquer projeto.
-
-```zsh
-# Lista todas ferramentas instaladas pelo asdf
-asdf list
-```
-
-Identifique a versão de cada ferramenta instalada e defina ela como global em seu sistema operacional conforme demosntrado abaixo:
-
-```zsh
-# Define cada versão a ser utilizada como global 
-asdf global k3d 5.4.1
-asdf global kubectl 1.23.5
-asdf global kubectx 0.9.4
-```
-
-Veja o resultado executando o comando que demosntra as versões instaladas e definidas pelo asdf em seu sistema operacional.
-
-```zsh
-# Lista qual a versão definida para cada ferramenta
-asdf current
-```
-
-Estes comandos combinados irão realizar a **adição do plugin** k3d/kubectl ao controlador asdf, **intalação** no sistema operacional e definição do escopo de utilização da **versão instalada como Global**
-
-## Iniciar o Docker na estação
-
-Verifique o status do docker para saber se ele já está rodando na máquina.
-
-```zsh
-sudo service docker status
-```
-
-Caso não esteja rodando, inicie o docker conforme abaixo:
-
-```zsh
-sudo service docker start
-```
+Primeiro certifique-se de ter os [pré requisitos](https://github.com/RLGHISLENI/rotten-potatoes) instalados e configurados em sua máquina.
 
 ## Como baixar o projeto em sua máquina e realizar build na imagem docker
 
@@ -209,7 +126,7 @@ k3d cluster create meucluster --agents 1 --servers 1 -p "8080:30000@loadbalancer
 
 A string **_`meucluster`_** representa o nome do seu cluster kubernetes, portando você pode utilizar o nome que melhor se adequar a sua realidade.
 
-Os parâmentros **`_agents_`** e **`_servers_`** podem ser dimencionados conforme sua necessidade e poder computacional.
+Os parâmentros **_`agents`_** e **_`servers`_** podem ser dimencionados conforme sua necessidade e poder computacional.
 
 O parâmetro **_`-p`_** realiza o **bind** da porta `8080` para a porta `30000` definida na instância do **service** como porta externa de entrada ao node kubernetes.
 
@@ -325,5 +242,6 @@ Os principais elementos utilizados no GitHub Actions são: Workflow, Events, Job
 
 ## Referências
 
+- [Meu Registry Server - DockerHub](https://hub.docker.com/u/rlghisleni)
 - [Exemplos básicos de pod, replicaset e deployment](https://github.com/RLGHISLENI/iniciativa-kubernetes-manifest)
 - [Desafio 01 - Docker](https://github.com/RLGHISLENI/conversao-temperatura)
