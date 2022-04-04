@@ -9,6 +9,7 @@
 - Git
 - ASDF
 - kubectl
+- kubectx
 - k3d
 
 ## Instalação de pré requisitos
@@ -45,7 +46,7 @@ asdf info
 
 Caso não funcione, reinicie seu terminal e tente novamente.
 
-### **Instalando o k3d e kubectl**
+### **Instalando o k3d e kubectl/kubectx**
 
 Após a instalação do asdf, abra o terminal e execute a lista de comandos abaixo:
 
@@ -54,9 +55,9 @@ Após a instalação do asdf, abra o terminal e execute a lista de comandos abai
 asdf plugin-add k3d && asdf install k3d latest 
 ```
 
-**kubectl:**
+**kubectl/kubectx:**
 ```zsh
-asdf plugin-add kubectl && asdf install kubectl latest
+asdf plugin-add kubectl && asdf install kubectl latest && asdf plugin-add kubectx && asdf install kubectx latest
 ```
 
 Agora para saber se **k3d** e o **kubectl** foram instalados corretamente pelo `asdf`, execute os comandos abaixo para identificar a versão instalada e defini-la como `global` para poder ser utilizada a partir de qualquer projeto.
@@ -72,6 +73,7 @@ Identifique a versão de cada ferramenta instalada e defina ela como global em s
 # Define cada versão a ser utilizada como global 
 asdf global k3d 5.4.1
 asdf global kubectl 1.23.5
+asdf global kubectx 0.9.4
 ```
 
 Veja o resultado executando o comando que demosntra as versões instaladas e definidas pelo asdf em seu sistema operacional.
