@@ -9,7 +9,7 @@
 - Git
 - ASDF
 - kubectl
-- kubectx
+- [kubectx](https://github.com/ahmetb/kubectx)
 - k3d
 
 ## Instalação de pré requisitos
