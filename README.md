@@ -1,4 +1,4 @@
-# Desafio 02 - Kubernetes
+# Desafio 02 e 03 - Kubernetes e Pipeline CI/CD
 
 ## Pré requisitos
 
@@ -322,3 +322,8 @@ GitHub Actions é uma **plataforma de integração contínua** e **entrega cont�
 É possível **criar fluxos de trabalho** completamente personalizado que criam e testam cada pull request no seu repositório, ou implantar pull requests mesclados em produção.
 
 Os principais elementos utilizados no GitHub Actions são: Workflow, Events, Jobs, Steps, Actions e Runners. 
+
+## Referências
+
+- [Exemplos básicos de pod, replicaset e deployment](https://github.com/RLGHISLENI/iniciativa-kubernetes-manifest)
+- [Desafio 01 - Docker](https://github.com/RLGHISLENI/conversao-temperatura)
